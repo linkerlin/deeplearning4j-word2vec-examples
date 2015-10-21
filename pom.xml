@@ -12,8 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <dl4j.version>0.0.3.3.5.alpha2-SNAPSHOT</dl4j.version>
-      <nd4j.version>0.0.3.5.5.6-SNAPSHOT</nd4j.version>
+    <dl4j.version>0.4-rc4.4-SNAPSHOT</dl4j.version>
+    <nd4j.version>0.4-rc3.6-SNAPSHOT</nd4j.version>
   </properties>
     <build>
         <plugins>
@@ -69,7 +69,7 @@
       <dependency>
           <groupId>org.nd4j</groupId>
           <artifactId>nd4j-jblas</artifactId>
-          <version>0.0.3.5.5.6-SNAPSHOT</version>
+          <version>0.4-rc3.6-SNAPSHOT</version>
       </dependency>
     <dependency>
       <groupId>org.deeplearning4j</groupId>
