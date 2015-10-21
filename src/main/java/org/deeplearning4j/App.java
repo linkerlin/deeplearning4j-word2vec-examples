@@ -2,6 +2,7 @@ package org.deeplearning4j;
 
 import org.deeplearning4j.berkeley.StringUtils;
 import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
+import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
 import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.nd4j.linalg.factory.Nd4j;
 
@@ -17,7 +18,7 @@ import java.util.List;
 public class App {
     public static void main( String[] args ) throws  Exception {
         Nd4j.factory().setOrder('f');
-        Word2Vec vec = WordVectorSerializer.loadGoogleModel(new File(args[0]),Boolean.parseBoolean(args[1]));
+        WordVectors vec = WordVectorSerializer.loadGoogleModel(new File(args[0]),Boolean.parseBoolean(args[1]));
         List<String> words = StringUtils.split(args[2],",");
         for(String s : words) {
             System.out.println("Vector for word " + Arrays.toString(vec.getWordVector(s)));
