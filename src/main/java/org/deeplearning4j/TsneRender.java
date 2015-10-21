@@ -2,6 +2,7 @@ package org.deeplearning4j;
 
 import org.deeplearning4j.models.embeddings.inmemory.InMemoryLookupTable;
 import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
+import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
 import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.deeplearning4j.plot.BarnesHutTsne;
 import org.slf4j.Logger;
@@ -20,7 +21,7 @@ public class TsneRender {
                 .theta(0.5).learningRate(500).setMaxIter(1000)
                 .build();
         log.info("Loading word vectors");
-        Word2Vec vec = WordVectorSerializer.loadGoogleModel(new File(args[0]), true,true);
+        WordVectors vec = WordVectorSerializer.loadGoogleModel(new File(args[0]), true,true);
         log.info("Loaded word vectors");
         InMemoryLookupTable table = (InMemoryLookupTable) vec.lookupTable();
         tsne.plot(table.getSyn0(),2,new ArrayList<>(vec.vocab().words()));
